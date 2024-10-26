@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://da701wleq4rrs"]
+
+[ext_resource type="Texture2D" uid="uid://b6uct8rc86ysn" path="res://assets/sprites/unity.png" id="1_80dix"]
+[ext_resource type="Script" path="res://scripts/carre.gd" id="1_fblkc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klgo6"]
+size = Vector2(512.998, 510.918)
+
+[node name="carre" type="RigidBody2D"]
+z_index = 1
+position = Vector2(126, 127)
+gravity_scale = 0.0
+script = ExtResource("1_fblkc")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_80dix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(1.50427, -0.544417)
+rotation = -0.000954911
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_klgo6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

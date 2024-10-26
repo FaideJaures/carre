@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpyyk67fvcuey"]
+
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_wfjob"]
+[ext_resource type="Texture2D" uid="uid://bfmjktv66d5l2" path="res://assets/sprites/godot.svg" id="2_ysn3v"]
+[ext_resource type="PackedScene" uid="uid://m8mbdv6v48lq" path="res://scenes/arrow.tscn" id="3_ym8xr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0kt2"]
+radius = 10.25
+
+[node name="ball" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_wfjob")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ysn3v")
+region_rect = Rect2(0, 0, 25, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+scale = Vector2(17.063, 8.38816)
+shape = SubResource("CircleShape2D_t0kt2")
+
+[node name="arrow" parent="." instance=ExtResource("3_ym8xr")]
+z_index = -1
+rotation = 0.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

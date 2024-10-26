@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgsb6uylkiwos"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0gkgu"]
+[ext_resource type="PackedScene" uid="uid://da701wleq4rrs" path="res://scenes/carre.tscn" id="1_mmn11"]
+[ext_resource type="PackedScene" uid="uid://dpyyk67fvcuey" path="res://scenes/ball.tscn" id="2_n21yt"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_0gkgu")
+
+[node name="carre" parent="." instance=ExtResource("1_mmn11")]
+z_index = 0
+
+[node name="ball" parent="." instance=ExtResource("2_n21yt")]
+position = Vector2(244, 695)
+
+[connection signal="hit" from="ball" to="." method="_on_ball_hit"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://m8mbdv6v48lq"]
+
+[ext_resource type="Texture2D" uid="uid://be1loueax1c1c" path="res://assets/sprites/arrow.png" id="1_gquy0"]
+
+[node name="arrow" type="Node2D"]
+rotation = -1.5656
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.0600516, -204.002)
+rotation = 3.13477
+scale = Vector2(0.0510922, -0.0496295)
+texture = ExtResource("1_gquy0")
